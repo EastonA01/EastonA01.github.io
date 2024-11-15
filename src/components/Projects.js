@@ -1,5 +1,4 @@
 // Projects.js
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import styled from 'styled-components';
 import reactIcon from '../assets/images/icons/reacticon.svg'
@@ -31,155 +30,159 @@ import djangoIcon from '../assets/images/icons/django-plain.svg'
 import rep4yVisual from '../assets/images/visuals/Rep4yVisual.png'
 import pomoVisual from '../assets/images/visuals/pomodoro.png'
 import wishrVisual from '../assets/images/visuals/Wishr.png'
+import ioVisual1 from '../assets/images/visuals/IOProjectVisual1.png'
+import ioVisual2 from '../assets/images/visuals/IOProjectVisual2.png'
+import inklingVisual from '../assets/images/visuals/inklingVisual.png'
 
-const ProjectsSection = styled(motion.section)`
-  padding: 100px 20px;
+
+const FileExplorerContainer = styled.div`
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
   background: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+  color: var(--text-color);
 `;
 
+const Folder = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  margin-bottom: 5px;
 
-const ProjectContainer = styled.div`
-  width: 80%;
-  max-width: 800px;
-  margin: 20px auto;
+  &:hover {
+    background: var(--light-gray);
+  }
+`;
+
+const FolderIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+`;
+
+const FolderContentWrapper = styled.div`
   overflow: hidden;
-  position: relative;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+  max-height: ${({ isExpanded }) => (isExpanded ? '1000px' : '0')};
+  opacity: ${({ isExpanded }) => (isExpanded ? '1' : '0')};
+  margin-left: 20px;
+  padding-left: ${({ isExpanded }) => (isExpanded ? '20px' : '0')};
+  border-left: ${({ isExpanded }) => (isExpanded ? '2px dashed var(--gray)' : 'none')};
+`;
+
+const ProjectDetails = styled.div`
+  background: var(--light-background);
+  padding: 10px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  margin-top: 10px;
+
+  h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  a {
+    display: inline-block;
+    margin-right: 10px;
+    color: var(--link-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const ImageGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+`;
+
+const ModalImage = styled.img`
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  border: 2px solid var(--white);
+`;
+
+const ModalClose = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--white);
+  color: var(--black);
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background: var(--light-gray);
+  }
 `;
 
 const TechLogoContainer = styled.div`
   display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
   flex-wrap: wrap;
-`;
+  gap: 10px;
 
-// Styled Component for the Project Card
-const ProjectCard = styled(motion.div)`
-  background: var(--white);
-  color: var(--text-color);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s;
-  
-  // Scale down font sizes for smaller screens
-  h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1rem;
-    color: var(--gray);
-    text-align: justify;
-    margin-bottom: 1rem;
-    flex-grow: 1;
-  }
-
-  /* Tech logo container: Make it responsive by adjusting the spacing */
-  ${TechLogoContainer} {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;  /* Center the logos on small screens */
-  }
-
-  /* Demo and Repo Links: Adjust for mobile-friendly layout */
-  a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: #007bff;
-    font-size: 0.9rem;
-  }
-
-  /* Images Section: Stack images vertically on smaller screens */
-  div[style*="marginTop: '1rem'"] {
-    display: flex;
-    flex-direction: column; /* Stack images vertically on smaller screens */
-    gap: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    /* For screens smaller than 768px (e.g., tablets, small laptops) */
-    padding: 15px;          /* Reduce padding for small screens */
-    min-height: 350px;      /* Slightly reduce the height */
-    h3 {
-      font-size: 1.25rem;  /* Reduce font size for small screens */
-    }
-    p {
-      font-size: 0.9rem;   /* Reduce font size for small screens */
-    }
-    a {
-      font-size: 0.85rem;  /* Smaller font size for links */
-    }
-  }
-
-  @media (max-width: 480px) {
-    /* For screens smaller than 480px (e.g., mobile devices) */
-    padding: 10px;          /* Reduce padding more for mobile */
-    min-height: 300px;      /* Ensure smaller height on mobile */
-    h3 {
-      font-size: 1.1rem;  /* Further reduce the font size for titles */
-    }
-    p {
-      font-size: 0.85rem; /* Further reduce the font size for description */
-    }
-    div[style*="marginTop: '1rem'"] {
-      display: block; /* Stack images in a column on mobile */
-    }
-    a {
-      font-size: 0.8rem;   /* Adjust link font size on mobile */
-      margin-right: 0;     /* Remove right margin for a cleaner layout */
-    }
+  img {
+    width: 24px;
+    height: 24px;
   }
 `;
 
-
-const NavButton = styled.button`
-  position: absolute;
-  top: 90%;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--secondary-color);
-  z-index: 1;
-
-  &:hover {
-    color: var(--secondary-color);
-  }
-`;
-
-const LeftButton = styled(NavButton)`
-  left: 0px;
-`;
-
-const RightButton = styled(NavButton)`
-  right: 0px;
-`;
 
 const projects = [
   {
     title: "Capstone Project: ReP4y *",
-    description: "Rep4y is a peer-to-peer payment platform designed to simplify shared expenses by automating recurring payments between users. Whether it’s splitting bills, subscriptions, or shared services, Rep4y makes managing monthly payments seamless. \n Built as a robust full-stack application with Supabase, React, Node.js, Shadcn, and TailwindCSS. Rep4y provides a secure, user-friendly experience for all types of recurring payments.",
+    description:
+      "Rep4y is a peer-to-peer payment platform designed to simplify shared expenses by automating recurring payments between users. Whether it’s splitting bills, subscriptions, or shared services, Rep4y makes managing monthly payments seamless.",
     technologies: [reactIcon, supabaseIcon, nodeIcon, tailwindIcon, paypalIcon],
     demoLink: "https://rep4y.com/",
     repoLink: "",
     images: [
       rep4yVisual
     ],
-    isPrivate: "* This project's repository is privately owned/maintained"
+    isPrivate: "* This project's repository is privately owned/maintained",
   },
   {
     title: "AI Agent: Tic Tac Toe",
@@ -197,6 +200,7 @@ const projects = [
     demoLink: "",
     repoLink: "https://github.com/EastonA01/CTAC-IO-Project",
     images: [
+      ioVisual1, ioVisual2
     ]
   },
   {
@@ -206,6 +210,7 @@ const projects = [
     demoLink: "https://eastona01.github.io/CTAC-FS102-Agile-Project/",
     repoLink: "https://github.com/EastonA01/CTAC-FS102-Agile-Project",
     images: [
+      inklingVisual
     ]
   },
   {
@@ -327,97 +332,149 @@ const projects = [
 ];
 
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedFolders, setExpandedFolders] = useState({});
+  const [expandedSubfolders, setExpandedSubfolders] = useState({});
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
-  // Function to handle going to the next project
-  const nextProject = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  const toggleFolder = (index) => {
+    setExpandedFolders((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
   };
 
-  // Function to handle going to the previous project
-  const prevProject = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
-    );
+  const toggleSubfolder = (projectIndex) => {
+    setExpandedSubfolders((prevState) => ({
+      ...prevState,
+      [projectIndex]: !prevState[projectIndex],
+    }));
+  };
+
+  const openModal = (image, index) => {
+    setSelectedImage(image);
+    setCurrentImageIndex(index);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    setCurrentImageIndex(null);
+  };
+
+  const handlePrevImage = (projectImages) => {
+    if (currentImageIndex > 0) {
+      const newIndex = currentImageIndex - 1;
+      setCurrentImageIndex(newIndex);
+      setSelectedImage(projectImages[newIndex]);
+    }
+  };
+
+  const handleNextImage = (projectImages) => {
+    if (currentImageIndex < projectImages.length - 1) {
+      const newIndex = currentImageIndex + 1;
+      setCurrentImageIndex(newIndex);
+      setSelectedImage(projectImages[newIndex]);
+    }
   };
 
   return (
-    <ProjectsSection
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      id="projects"
-    >
+    <FileExplorerContainer>
       <h2>Projects</h2>
-      <ProjectContainer>
-        {/* Project Navigation Buttons */}
-        <LeftButton onClick={prevProject}>{"<"}</LeftButton>
-        <RightButton onClick={nextProject}>{">"}</RightButton>
-        
-        {/* Current Project Card */}
-        <ProjectCard
-          key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ type: 'spring', stiffness: 50 }}
-        >
-          <h3>{projects[currentIndex].title}</h3>
-          <p>{projects[currentIndex].description}</p>
-
-          {/* Technology Logos */}
-          <TechLogoContainer>
-            {projects[currentIndex].technologies.map((TechLogo, logoIndex) => (
-              <div key={logoIndex} style={{ width: "24px", height: "24px" }}>
-                <img src={TechLogo} alt='Tech Logo' style={{ width: "24px", height: "24px" }} />
-              </div>
-            ))}
-          </TechLogoContainer>
-
-          {/* Demo and Repo Links */}
-          <div style={{ marginTop: "1rem" }}>
-            {projects[currentIndex].demoLink && (
-              <a
-                href={projects[currentIndex].demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ marginRight: "1rem", textDecoration: "none", color: "#007bff" }}
-              >
-                View Demo
-              </a>
-            )}
-            {projects[currentIndex].repoLink && (
-              <a
-                href={projects[currentIndex].repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none", color: "#007bff" }}
-              >
-                View Repo
-              </a>
-            )}
-          </div>
-
-          {/* Images Section */}
-          {projects[currentIndex].images && (
-            <div style={{ marginTop: "1rem", display: "flex", gap: "1rem" }}>
-              {projects[currentIndex].images.map((image, imageIndex) => (
-                <div key={imageIndex} style={{ width: "200px", height: "auto" }}>
+      {projects.map((project, index) => (
+        <div key={index}>
+          <Folder onClick={() => toggleFolder(index)}>
+            <FolderIcon
+              src={require('../assets/images/icons/folder.png')}
+              alt="Folder Icon"
+            />
+            {project.title}
+          </Folder>
+          <FolderContentWrapper isExpanded={expandedFolders[index]}>
+            <ProjectDetails>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              {project.demoLink && (
+                <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                  View Demo
+                </a>
+              )}
+              {project.repoLink && (
+                <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                  View Repo
+                </a>
+              )}
+              <p>{project.isPrivate}</p>
+              <TechLogoContainer>
+                {project.technologies.map((tech, idx) => (
                   <img
-                    src={image}
-                    alt={`Project ${currentIndex + 1} ${imageIndex + 1}`}
-                    style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+                    key={idx}
+                    src={tech}
+                    alt={`${tech} logo`}
                   />
-                </div>
-              ))}
-            </div>
-          )}
+                ))}
+              </TechLogoContainer>
+            </ProjectDetails>
+            {project.images && project.images.length > 0 && (
+              <>
+                <Folder onClick={() => toggleSubfolder(index)}>
+                  <FolderIcon
+                    src={require('../assets/images/icons/folder.png')}
+                    alt="Subfolder Icon"
+                  />
+                  Images
+                </Folder>
+                <FolderContentWrapper isExpanded={expandedSubfolders[index]}>
+                  <ImageGrid>
+                    {project.images.map((image, idx) => (
+                      <img
+                        key={idx}
+                        src={image}
+                        alt=""
+                        onClick={() => openModal(image, idx)}
+                      />
+                    ))}
+                  </ImageGrid>
+                </FolderContentWrapper>
+              </>
+            )}
+          </FolderContentWrapper>
+        </div>
+      ))}
 
-          {/* Shows if Project is private or not */}
-          <p>{projects[currentIndex].isPrivate}</p>
-        </ProjectCard>
-      </ProjectContainer>
-    </ProjectsSection>
+      {selectedImage && currentImageIndex !== null && (
+        <Modal style={{flexDirection:'column'}} onClick={closeModal}>
+          <ModalImage 
+          src={selectedImage} 
+          alt="Expanded view" 
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image
+          />
+          <ModalClose onClick={closeModal}>×</ModalClose>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handlePrevImage(projects.find(p => p.images.includes(selectedImage)).images);
+              }}
+              disabled={currentImageIndex === 0}
+            >
+              Previous
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNextImage(projects.find(p => p.images.includes(selectedImage)).images);
+              }}
+              disabled={
+                currentImageIndex ===
+                projects.find(p => p.images.includes(selectedImage)).images.length - 1
+              }
+            >
+              Next
+            </button>
+          </div>
+        </Modal>
+      )}
+    </FileExplorerContainer>
   );
 };
 
