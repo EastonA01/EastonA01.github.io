@@ -1,0 +1,234 @@
+/* App.css */
+
+/* Color and font settings for a consistent corporate theme */
+:root {
+  --primary-color: #0a2a66;          /* Deep blue for headings and accents */
+  --secondary-color: #007bff;        /* Light blue for highlights */
+  --background-color: #f8f9fa;       /* Light gray for background */
+  --text-color: #333333;             /* Dark gray for readability */
+  --accent-color: #ffc107;           /* Accent yellow */
+  --white: #ffffff;
+  --gray: #6c757d;
+  --font-family: 'Lato', sans-serif;
+  --font-heading: 'Roboto', sans-serif;
+}
+
+/* Global resets and body styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Headings and text styling */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+/* Navbar styling */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: var(--white);
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+/* Section styling */
+section {
+  padding: 0;
+}
+
+
+/* About section styling */
+#about {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: var(--white);
+  padding: 100px 20px;
+  color: var(--text-color);
+}
+
+#about img,
+#about .headshot-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Projects section styling */
+#projects {
+  background: var(--background-color);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--white);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styling */
+button {
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  nav a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* SvgOverlay.css */
+
+/* Container to hold the SVG and text */
+.svg-container {
+  position: relative;
+  width: 100%; /* Adjust width as needed */
+  height: 500px; /* Set to the height you need */
+  overflow: hidden;
+}
+
+/* Style for the SVG to fill the container */
+.svg-container svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Styling and positioning for the text */
+.overlay-text {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Align to the center */
+  text-align: center;
+  color: white; /* Adjust color for contrast with SVG */
+  background-color: #f8f9fa;
+}
+
+.overlay-text h1 {
+  font-size: 2rem; /* Adjust font size as needed */
+  margin: 0;
+}
+
+.overlay-text p {
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+/* Example SVG animation */
+@keyframes ld-speed-dash {
+  0% { transform: translate(0,-100px); }
+  100% { transform: translate(0,100px); }
+}
+.ld.ld-speed-dash {
+  animation: ld-speed-dash 3s linear infinite; 
+}
