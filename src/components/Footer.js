@@ -72,10 +72,10 @@ const Footer = () => {
 
       {/* Social Media Links */}
       <FooterSocials>
-        <FooterLink href="https://www.linkedin.com/in/easton-anderson-674aa5259/" target="_blank" rel="noopener noreferrer">
+        <FooterLink href="https://www.linkedin.com/in/easton-anderson-674aa5259/" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center'}}>
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width={30} />
         </FooterLink>
-        <FooterLink href="https://github.com/EastonA01" target="_blank" rel="noopener noreferrer">
+        <FooterLink href="https://github.com/EastonA01" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center'}}>
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" width={30} />
         </FooterLink>
       </FooterSocials>

@@ -22,6 +22,7 @@ const Nav = styled.nav`
 
 const NavLinks = styled.div`
   display: flex;
+  align-items: center;
   gap: 20px;
 
   @media (max-width: 768px) {
@@ -78,8 +79,8 @@ export default function Navbar() {
         <NavLink href="#about">About</NavLink>
         <NavLink href="#projects">Projects</NavLink>
         <div style={{display:'flex'}}>
-        <NavLink href="https://www.linkedin.com/in/easton-anderson-674aa5259/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width={30}/></NavLink>
-        <NavLink href="https://github.com/EastonA01" target="_blank" rel="noopener noreferrer"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" width={30}/></NavLink>
+        <NavLink href="https://www.linkedin.com/in/easton-anderson-674aa5259/" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center', flexDirection:'row-reverse'}}><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width={30}/></NavLink>
+        <NavLink href="https://github.com/EastonA01" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center'}}><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" width={30}/></NavLink>
         </div>
       </NavLinks>
     </Nav>

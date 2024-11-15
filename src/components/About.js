@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const AboutSection = styled(motion.section)`
   display: flex;
+  justify-content:center;
   align-items: center;
   gap: 30px;
   padding: 100px 20px;
@@ -49,6 +50,13 @@ export default function About() {
         <p>
           I'm a software developer specializing in creating efficient, scalable web solutions. With a
           background in full-stack development, I bring a strategic approach to every project.
+        </p>
+      </AboutContent>
+      <Headshot src='/pups.jpg'/>
+      <AboutContent>
+        <h2>What I do</h2>
+        <p>When I'm not pushing myself to learn new tech stacks, you can probably find me 
+          out playing pickleball with my coworkers, trying new recipes in the kitchen, or hanging out with my two dogs!  
         </p>
       </AboutContent>
     </AboutSection>

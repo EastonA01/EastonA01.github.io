@@ -41,9 +41,6 @@ const ProjectsSection = styled(motion.section)`
   text-align: center;
 `;
 
-const Spacer = styled.div`
-  height: 30em; /* Adjust height as needed */
-`;
 
 const ProjectContainer = styled.div`
   width: 80%;
@@ -420,7 +417,6 @@ const Projects = () => {
           <p>{projects[currentIndex].isPrivate}</p>
         </ProjectCard>
       </ProjectContainer>
-      <Spacer/>
     </ProjectsSection>
   );
 };
