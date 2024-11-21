@@ -5,7 +5,7 @@ import Landing from './Landing';
 import About from './About';
 import Projects from './Projects';
 import Footer from './Footer';
-import Learning from './Learning'
+import Showcase from "./Showcase";
 
 export default function AppLayout() {
   return (
@@ -13,8 +13,8 @@ export default function AppLayout() {
       <Navbar />
       <Landing />
       <About />
+        <Showcase />
       <Projects />
-      <Learning />
       <Footer />
     </div>
   );

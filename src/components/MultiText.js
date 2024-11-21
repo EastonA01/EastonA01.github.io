@@ -7,8 +7,12 @@ export default function MultiText() {
 
   React.useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['<i>proficient</i> in Java, JS &amp; Python.', 'who loves to code', 'that took too long to make this'],
-      typeSpeed: 100,
+      strings: ['<i>proficient</i> in Java, JS &amp; Python.',
+        '<b>building</b> full-stack applications since 2022.',
+        'engineering new solutions with multiple frameworks.', 'currently working with React, tsParticles, and typed.js.',
+        'actively working to <b>change the world around him.</b>'
+      ],
+      typeSpeed: 75,
       loop: true,
     });
 
@@ -19,6 +23,6 @@ export default function MultiText() {
   }, []);
 
   return (
-      <span ref={el} />
+      <span ref={el} style={{ color: 'var(--secondary-color)' }}/>
   );
 }

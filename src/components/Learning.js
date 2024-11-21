@@ -32,7 +32,7 @@ const Headshot = styled.img`
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a polished look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a polished look */
   background: none;
 `;
 
@@ -42,7 +42,7 @@ export default function Learning() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      id="about"
+      id="learning"
     >
     <Headshot src='https://seeklogo.com/images/H/harvard-university-logo-D7CC65EE30-seeklogo.com.png'/>
       <AboutContent>

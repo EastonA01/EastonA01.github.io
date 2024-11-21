@@ -39,10 +39,11 @@ const FileExplorerContainer = styled.div`
   width: 80%;
   margin: 20px auto;
   padding: 20px;
-  background: var(--background-color);
+  //background: var(--background-color);
   border: 1px solid var(--gray);
   border-radius: 10px;
   color: var(--text-color);
+  backdrop-filter: blur(5px);
 `;
 
 const Folder = styled.div`
@@ -50,14 +51,12 @@ const Folder = styled.div`
   align-items: center;
   cursor: pointer;
   padding: 10px;
-  background: var(--white);
-  border: 1px solid var(--gray);
+  //background: var(--white);
+  //border: 1px solid var(--gray);
   border-radius: 5px;
   margin-bottom: 5px;
-
-  &:hover {
-    background: var(--light-gray);
-  }
+  background: rgba(15, 15, 15);
+  
 `;
 
 const FolderIcon = styled.img`
@@ -77,7 +76,6 @@ const FolderContentWrapper = styled.div`
 `;
 
 const ProjectDetails = styled.div`
-  background: var(--light-background);
   padding: 10px;
   border: 1px solid var(--gray);
   border-radius: 5px;
@@ -89,13 +87,12 @@ const ProjectDetails = styled.div`
   }
 
   p {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   a {
     display: inline-block;
     margin-right: 10px;
-    color: var(--link-color);
     text-decoration: none;
 
     &:hover {
@@ -148,15 +145,11 @@ const ModalClose = styled.div`
   top: 20px;
   right: 20px;
   background: var(--white);
-  color: var(--black);
   padding: 5px 10px;
   font-size: 1.2rem;
   cursor: pointer;
   border-radius: 5px;
-
-  &:hover {
-    background: var(--light-gray);
-  }
+  
 `;
 
 const TechLogoContainer = styled.div`
@@ -333,7 +326,6 @@ const projects = [
 
 const Projects = () => {
   const [expandedFolders, setExpandedFolders] = useState({});
-  const [expandedSubfolders, setExpandedSubfolders] = useState({});
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
@@ -344,12 +336,6 @@ const Projects = () => {
     }));
   };
 
-  const toggleSubfolder = (projectIndex) => {
-    setExpandedSubfolders((prevState) => ({
-      ...prevState,
-      [projectIndex]: !prevState[projectIndex],
-    }));
-  };
 
   const openModal = (image, index) => {
     setSelectedImage(image);
@@ -378,8 +364,8 @@ const Projects = () => {
   };
 
   return (
-    <FileExplorerContainer>
-      <h2>Projects</h2>
+    <FileExplorerContainer id={'projects'}>
+      <h2>Project History</h2>
       {projects.map((project, index) => (
         <div key={index}>
           <Folder onClick={() => toggleFolder(index)}>
@@ -394,14 +380,14 @@ const Projects = () => {
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               {project.demoLink && (
-                <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                  View Demo
-                </a>
+                  <button><a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                    View Demo
+                  </a></button>
               )}
               {project.repoLink && (
-                <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                  View Repo
-                </a>
+                  <button><a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                    View Repo
+                  </a></button>
               )}
               <p>{project.isPrivate}</p>
               <TechLogoContainer>
@@ -413,30 +399,22 @@ const Projects = () => {
                   />
                 ))}
               </TechLogoContainer>
+              {project.images && project.images.length > 0 && (
+                  <>
+                    <p style={{marginTop: '30px'}}>Visuals</p>
+                    <ImageGrid>
+                      {project.images.map((image, idx) => (
+                          <img
+                              key={idx}
+                              src={image}
+                              alt=""
+                              onClick={() => openModal(image, idx)}
+                          />
+                      ))}
+                    </ImageGrid>
+                  </>
+              )}
             </ProjectDetails>
-            {project.images && project.images.length > 0 && (
-              <>
-                <Folder onClick={() => toggleSubfolder(index)}>
-                  <FolderIcon
-                    src={require('../assets/images/icons/folder.png')}
-                    alt="Subfolder Icon"
-                  />
-                  Images
-                </Folder>
-                <FolderContentWrapper isExpanded={expandedSubfolders[index]}>
-                  <ImageGrid>
-                    {project.images.map((image, idx) => (
-                      <img
-                        key={idx}
-                        src={image}
-                        alt=""
-                        onClick={() => openModal(image, idx)}
-                      />
-                    ))}
-                  </ImageGrid>
-                </FolderContentWrapper>
-              </>
-            )}
           </FolderContentWrapper>
         </div>
       ))}
