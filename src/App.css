@@ -264,3 +264,7 @@ canvas{
 #cs50{
   color: var(--accent-color);
 }
+
+a{
+  color: var(--white);
+}

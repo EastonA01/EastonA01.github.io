@@ -18,12 +18,7 @@ const LandingSection = styled(motion.section)`
 
 export default function Landing() {
   return (
-    <LandingSection
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      id="landing"
-    >
+    <LandingSection id="landing">
     <div className="svg-container">
       <ParticleBackground></ParticleBackground>
 
