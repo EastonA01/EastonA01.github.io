@@ -7,7 +7,6 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--primary-color);
   color: var(--white);
   padding: 30px 20px;
   position: relative;
@@ -73,10 +72,10 @@ const Footer = () => {
       {/* Social Media Links */}
       <FooterSocials>
         <FooterLink href="https://www.linkedin.com/in/easton-anderson-674aa5259/" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center'}}>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width={30} />
+        <i className="devicon-linkedin-plain" style={{fontSize: '30px'}}></i>
         </FooterLink>
         <FooterLink href="https://github.com/EastonA01" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center'}}>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" width={30} />
+        <i class="devicon-github-original" style={{fontSize: '30px'}}></i>
         </FooterLink>
       </FooterSocials>
 

@@ -6,7 +6,6 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--primary-color);
   color: var(--white);
   padding: 15px 20px;
   position: fixed;
@@ -31,7 +30,7 @@ const NavLinks = styled.div`
     top: 60px;
     left: 0;
     width: 100%;
-    background: var(--primary-color);
+    background: var(--gray);
     padding: 15px 0;
     text-align: center;
     flex-direction: column;
@@ -79,8 +78,8 @@ export default function Navbar() {
         <NavLink href="#about">About</NavLink>
         <NavLink href="#projects">Projects</NavLink>
         <div style={{display:'flex'}}>
-        <NavLink href="https://www.linkedin.com/in/easton-anderson-674aa5259/" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center', flexDirection:'row-reverse'}}><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width={30}/></NavLink>
-        <NavLink href="https://github.com/EastonA01" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center'}}><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" width={30}/></NavLink>
+        <NavLink href="https://www.linkedin.com/in/easton-anderson-674aa5259/" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center', flexDirection:'row-reverse'}}><i className="devicon-linkedin-plain" style={{fontSize: '30px'}}></i></NavLink>
+        <NavLink href="https://github.com/EastonA01" target="_blank" rel="noopener noreferrer" style={{display:'flex', alignItems:'center', fontSize: '2em'}}><i class="devicon-github-original"></i></NavLink>
         </div>
       </NavLinks>
     </Nav>
