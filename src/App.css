@@ -2,9 +2,17 @@
 
 /* Mr Robot Font */
 @font-face {
-  font-family: "Light";   /*Can be any text*/
+  font-family: "MrRobot";   /*Can be any text*/
   src: local("mr_robot-webfont"),
     url("./fonts/mr_robot-webfont.ttf") format("truetype");
+}
+
+/* Satoshi Font */
+/* Mr Robot Font */
+@font-face {
+  font-family: "Satoshi";   /*Can be any text*/
+  src: local("Satoshi-Variable"),
+    url("./fonts/Satoshi-Variable.ttf") format("truetype");
 }
 
 /* Color and font settings for a consistent corporate theme */
@@ -40,7 +48,7 @@ body {
 
 /* Headings and text styling */
 h1, h2, h3 {
-  font-family: "Light";
+  font-family: "MrRobot";
   color: var(--primary-color);
   margin-bottom: 15px;
   font-weight: normal;
@@ -64,7 +72,8 @@ h3 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-family: 'Satoshi';
+  font-size: 1.2rem;
   margin-top: 10px;
   color: var(--text-color);
 }
@@ -221,17 +230,16 @@ button:hover {
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Align to the center */
   text-align: center;
-  color: white; /* Adjust color for contrast with SVG */
 }
 
 .overlay-text h1 {
-  font-size: 4rem; /* Adjust font size as needed */
+  font-size: 4rem;
   font-weight: normal;
   margin: 0;
 }
 
 .overlay-text p {
-  font-size: 1rem; /* Adjust font size as needed */
+  font-size: 1.2rem;
   color:var(--white)
 }
 
@@ -267,4 +275,5 @@ canvas{
 
 a{
   color: var(--white);
+  font-family: 'Satoshi';
 }
