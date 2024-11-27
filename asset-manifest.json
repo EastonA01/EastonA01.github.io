@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b6946016.css",
-    "main.js": "/static/js/main.f091bb1a.js",
+    "main.css": "/static/css/main.032befb0.css",
+    "main.js": "/static/js/main.1a700181.js",
     "static/js/453.a03cfc4a.chunk.js": "/static/js/453.a03cfc4a.chunk.js",
     "static/media/steamStatsDemo.mp4": "/static/media/steamStatsDemo.85e2358fcfaa3257cb38.mp4",
     "static/media/microblogDemo.mp4": "/static/media/microblogDemo.97970a6038d361aa36a3.mp4",
     "static/media/Rep4yVisual.png": "/static/media/Rep4yVisual.21d0aa50dac8544b332e.png",
     "static/media/inklingVisual.png": "/static/media/inklingVisual.72a78f79caa76c559ffb.png",
     "static/media/pomodoro.png": "/static/media/pomodoro.33b9593910dd044ff7a0.png",
+    "static/media/Satoshi-Variable.ttf": "/static/media/Satoshi-Variable.536fda9b164542087fc7.ttf",
     "static/media/Wishr.png": "/static/media/Wishr.3ae9acac3bf361b9fc6e.png",
     "static/media/pygame.png": "/static/media/pygame.b7a3c3294df75d1ad9d3.png",
     "static/media/IOProjectVisual1.png": "/static/media/IOProjectVisual1.60a8e2325f338858e3ca.png",
@@ -17,7 +18,7 @@
     "static/media/python.png": "/static/media/python.6a5cbc319ab3ddf8ef92.png",
     "static/media/java.png": "/static/media/java.ddf8676bd569fe01ab44.png",
     "static/media/mr_robot-webfont.ttf": "/static/media/mr_robot-webfont.f808fc306f0ebb828891.ttf",
-    "static/media/maven-original.svg": "/static/media/maven-original.2a39d66d6f0ef434755a0d9f4b4f278b.svg",
+    "static/media/maven-original.svg": "/static/media/maven-original.d6ceba3a29ee4eadc7fa4e4696e2dfd8.svg",
     "static/media/nodeicon.png": "/static/media/nodeicon.07d152a8a036951b8d14.png",
     "static/media/flask-original-wordmark.svg": "/static/media/flask-original-wordmark.d651dd3c41c0dc8d123714f8d9a6f79f.svg",
     "static/media/css.png": "/static/media/css.6c9fd512b594be488cf9.png",
@@ -26,20 +27,20 @@
     "static/media/postgresql-original.svg": "/static/media/postgresql-original.7bc394e86ea1f692d59a3d484ad156af.svg",
     "static/media/docker-original.svg": "/static/media/docker-original.1d41320cb0101dbbc6fe182abd590263.svg",
     "static/media/reacticon.svg": "/static/media/reacticon.6d4dd5dfc6163bdfcfe520bd6bef1a6a.svg",
-    "static/media/sqlite-original.svg": "/static/media/sqlite-original.b4f3f38ee88f92aab0671f0f98aec87f.svg",
-    "static/media/go-original-wordmark.svg": "/static/media/go-original-wordmark.66845436a5ce2eb0795d26690a4eecf7.svg",
-    "static/media/vitejs-original.svg": "/static/media/vitejs-original.b30f410b464ac887c73c06e31add7f64.svg",
-    "static/media/spring-original.svg": "/static/media/spring-original.0df3be385996b20043fd47a1165160c7.svg",
+    "static/media/sqlite-original.svg": "/static/media/sqlite-original.ce52b3c0a7386f304df48a56071c39f4.svg",
+    "static/media/go-original-wordmark.svg": "/static/media/go-original-wordmark.d4d03128a6e2177183f80a5359856330.svg",
+    "static/media/vitejs-original.svg": "/static/media/vitejs-original.f50a44c4fc707187d8968065ddf54ff6.svg",
+    "static/media/spring-original.svg": "/static/media/spring-original.965ec1c65604d7e0ffff21b54cd4192f.svg",
     "index.html": "/index.html",
     "static/media/c-original.svg": "/static/media/c-original.13f24c473f4fd7f944b1410cc8058a89.svg",
-    "static/media/django-plain.svg": "/static/media/django-plain.c1ea8b0c07747ebdd9c4da37f0f46d2a.svg",
+    "static/media/django-plain.svg": "/static/media/django-plain.a5621419d0b7b0cf98c8d5fd4c982c64.svg",
     "static/media/npm-original-wordmark.svg": "/static/media/npm-original-wordmark.87689eab730642c86d2b01f3ef4a19e3.svg",
-    "main.b6946016.css.map": "/static/css/main.b6946016.css.map",
-    "main.f091bb1a.js.map": "/static/js/main.f091bb1a.js.map",
+    "main.032befb0.css.map": "/static/css/main.032befb0.css.map",
+    "main.1a700181.js.map": "/static/js/main.1a700181.js.map",
     "453.a03cfc4a.chunk.js.map": "/static/js/453.a03cfc4a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6946016.css",
-    "static/js/main.f091bb1a.js"
+    "static/css/main.032befb0.css",
+    "static/js/main.1a700181.js"
   ]
 }
