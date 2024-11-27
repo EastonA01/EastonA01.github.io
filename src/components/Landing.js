@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import ParticleBackground from './ParticleBackground';
 import MultiText from './MultiText';
+import ButtonCircle from './ButtonCircle';
 
 const LandingSection = styled(motion.section)`
   position: relative;
@@ -28,6 +29,8 @@ export default function Landing() {
         <p>Software developer <MultiText /> </p>
       </div>
     </div>
+
+    <ButtonCircle />
     </LandingSection>
   );
 }

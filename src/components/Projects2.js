@@ -37,6 +37,7 @@ const ProjectRow = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -51,7 +52,8 @@ const ProjectImageContainer = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   height: 30em;
-  width: 80em;
+  width: 100%; /* Make it responsive */
+  max-width: 40em; /* Limit the maximum width */
   border-radius: 10px;
   margin: 0 20px;
   position: relative;
@@ -62,7 +64,13 @@ const ProjectImageContainer = styled.div`
     inset: 0;
     border-radius: 10px;
   }
-`;
+
+  @media (max-width: 768px) {
+    height: 20em; /* Adjust height for smaller screens */
+    max-width: 90%; /* Allow more width usage on smaller screens */
+    min-height: 20em; /* Added to allow images to properly render in mobile*/
+  }
+`
 
 const ProjectContent = styled.div`
   flex: 1;

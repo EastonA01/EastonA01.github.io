@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Landing from './Landing';
-import About from './About';
+import About from './About'; // eslint-disable-next-line
 import Projects from './Projects';
 import Footer from './Footer'; // eslint-disable-next-line
 import Showcase from "./Showcase"; 
@@ -16,7 +16,7 @@ export default function AppLayout() {
       <About />
       {/* <Showcase /> */}
         <Projects2 />
-      <Projects />
+      {/* <Projects /> */}
       <Footer />
     </div>
   );

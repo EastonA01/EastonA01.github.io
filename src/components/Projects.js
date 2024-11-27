@@ -1,5 +1,5 @@
 // Projects.js
-import { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import reactIcon from '../assets/images/icons/reacticon.svg'
 import nodeIcon from '../assets/images/icons/nodeicon.png'
@@ -160,6 +160,51 @@ const TechLogoContainer = styled.div`
   img {
     width: 24px;
     height: 24px;
+  }
+`;
+
+// Added additional styling/logic to allow it to be rendered as an overlay
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  overflow: hidden; /* Prevent scrolling on the body */
+`;
+
+const ContentWrapper = styled.div`
+  position: relative;
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90%; /* Limit height to make it scrollable */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  /* Styling for smooth scrolling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(255, 255, 255, 0.1);
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
   }
 `;
 
@@ -324,7 +369,20 @@ const projects = [
   // Add more projects as needed
 ];
 
-const Projects = () => {
+export default function Projects({ onClose = () => {} }){
+  // Stuff for overlay
+  const wrapperRef = useRef(null);
+  // Close the modal if the user clicks outside the content area
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [onClose]);
+
   const [expandedFolders, setExpandedFolders] = useState({});
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
@@ -364,7 +422,9 @@ const Projects = () => {
   };
 
   return (
-    <FileExplorerContainer id={'projects'}>
+    <Overlay>
+      <ContentWrapper ref={wrapperRef}>
+      <FileExplorerContainer id={'projects'}>
       <h2>Project History</h2>
       {projects.map((project, index) => (
         <div key={index}>
@@ -453,7 +513,7 @@ const Projects = () => {
         </Modal>
       )}
     </FileExplorerContainer>
+      </ContentWrapper>
+    </Overlay>
   );
 };
-
-export default Projects;
