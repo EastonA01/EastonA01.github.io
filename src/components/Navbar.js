@@ -77,7 +77,10 @@ export default function Navbar() {
       <Nav>
         <Hamburger onClick={() => setMenuOpen(!menuOpen)}>☰</Hamburger>
         <NavLinks open={menuOpen}>
+          <div>
+          <NavLink href={process.env.PUBLIC_URL+'2024EastonAndersonResume.pdf'}>Resume</NavLink>
           <NavLink onClick={() => setShowProject(true)}>Project History</NavLink>
+          </div>
           <div style={{ display: 'flex' }}>
             <NavLink
               href="https://www.linkedin.com/in/easton-anderson-674aa5259/"

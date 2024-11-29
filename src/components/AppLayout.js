@@ -7,6 +7,7 @@ import Projects from './Projects';
 import Footer from './Footer'; // eslint-disable-next-line
 import Showcase from "./Showcase"; 
 import Projects2 from './Projects2';
+import Facts from './Facts';
 
 export default function AppLayout() {
   return (
@@ -14,9 +15,8 @@ export default function AppLayout() {
       <Navbar />
       <Landing />
       <About />
-      {/* <Showcase /> */}
-        <Projects2 />
-      {/* <Projects /> */}
+      <Projects2 />
+      <Facts />
       <Footer />
     </div>
   );

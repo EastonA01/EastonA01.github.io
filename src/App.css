@@ -2,15 +2,16 @@
 
 /* Mr Robot Font */
 @font-face {
-  font-family: "MrRobot";   /*Can be any text*/
+  font-family: "MrRobot";   /*Can be any text, but like to use the font family name*/
   src: local("mr_robot-webfont"),
     url("./fonts/mr_robot-webfont.ttf") format("truetype");
 }
 
 /* Satoshi Font */
 /* Mr Robot Font */
+/* Sourced from fontshare: https://www.fontshare.com/fonts/satoshi */
 @font-face {
-  font-family: "Satoshi";   /*Can be any text*/
+  font-family: "Satoshi";
   src: local("Satoshi-Variable"),
     url("./fonts/Satoshi-Variable.ttf") format("truetype");
 }
@@ -121,7 +122,6 @@ section {
   padding: 100px 20px;
   color: var(--text-color);
   backdrop-filter: blur(5px);
-  border: 1px solid var(--gray);
   border-radius: 10px;
 }
 
@@ -139,9 +139,6 @@ section {
 }
 
 /* Projects section styling */
-#projects {
-  /*background: var(--background-color);*/
-}
 
 .project-grid {
   display: grid;
@@ -369,4 +366,14 @@ a{
 
 html{
   scroll-behavior: smooth;
+}
+
+/* Fun Facts Styling, similar to #About */
+#facts{
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  color: var(--text-color);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
 }

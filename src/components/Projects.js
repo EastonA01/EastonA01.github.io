@@ -144,12 +144,11 @@ const ModalClose = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  background: var(--white);
   padding: 5px 10px;
   font-size: 1.2rem;
   cursor: pointer;
   border-radius: 5px;
-  
+  z-index: 2;
 `;
 
 const TechLogoContainer = styled.div`
@@ -423,6 +422,7 @@ export default function Projects({ onClose = () => {} }){
 
   return (
     <Overlay>
+    <ModalClose onClick={useEffect}>×</ModalClose>
       <ContentWrapper ref={wrapperRef}>
       <FileExplorerContainer id={'projects'}>
       <h2>Project History</h2>
