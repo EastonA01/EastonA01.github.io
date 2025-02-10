@@ -31,7 +31,6 @@ const NavLinks = styled.div`
     top: 60px;
     left: 0;
     width: 100%;
-    background: var(--gray);
     padding: 15px 0;
     text-align: center;
     flex-direction: column;
@@ -78,7 +77,7 @@ export default function Navbar() {
         <Hamburger onClick={() => setMenuOpen(!menuOpen)}>☰</Hamburger>
         <NavLinks open={menuOpen}>
           <div>
-          <NavLink href={process.env.PUBLIC_URL+'2024EastonAndersonResume.pdf'}>Resume</NavLink>
+          <NavLink href={process.env.PUBLIC_URL+'EastonAndersonSoftwareDeveloperResume.pdf'}>Resume</NavLink>
           <NavLink onClick={() => setShowProject(true)}>Project History</NavLink>
           </div>
           <div style={{ display: 'flex' }}>

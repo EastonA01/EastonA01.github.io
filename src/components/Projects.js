@@ -124,7 +124,7 @@ const Modal = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
@@ -184,7 +184,7 @@ const ContentWrapper = styled.div`
   padding: 20px;
   border-radius: 10px;
   width: 90%;
-  max-width: 500px;
+
   max-height: 90%; /* Limit height to make it scrollable */
   overflow-y: auto; /* Enable vertical scrolling */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
