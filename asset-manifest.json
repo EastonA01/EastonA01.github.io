@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.537449e3.css",
-    "main.js": "/static/js/main.063b0abc.js",
+    "main.js": "/static/js/main.a406c7d1.js",
     "static/js/453.a03cfc4a.chunk.js": "/static/js/453.a03cfc4a.chunk.js",
     "static/media/steamStatsDemo.mp4": "/static/media/steamStatsDemo.85e2358fcfaa3257cb38.mp4",
     "static/media/microblogDemo.mp4": "/static/media/microblogDemo.97970a6038d361aa36a3.mp4",
     "static/media/Rep4yVisual.png": "/static/media/Rep4yVisual.21d0aa50dac8544b332e.png",
     "static/media/inklingVisual.png": "/static/media/inklingVisual.72a78f79caa76c559ffb.png",
+    "static/media/kilovisual.png": "/static/media/kilovisual.60281a524da7baf4367b.png",
     "static/media/pomodoro.png": "/static/media/pomodoro.33b9593910dd044ff7a0.png",
     "static/media/Satoshi-Variable.ttf": "/static/media/Satoshi-Variable.536fda9b164542087fc7.ttf",
     "static/media/Wishr.png": "/static/media/Wishr.3ae9acac3bf361b9fc6e.png",
@@ -36,11 +37,11 @@
     "static/media/django-plain.svg": "/static/media/django-plain.c1ea8b0c07747ebdd9c4da37f0f46d2a.svg",
     "static/media/npm-original-wordmark.svg": "/static/media/npm-original-wordmark.87689eab730642c86d2b01f3ef4a19e3.svg",
     "main.537449e3.css.map": "/static/css/main.537449e3.css.map",
-    "main.063b0abc.js.map": "/static/js/main.063b0abc.js.map",
+    "main.a406c7d1.js.map": "/static/js/main.a406c7d1.js.map",
     "453.a03cfc4a.chunk.js.map": "/static/js/453.a03cfc4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.537449e3.css",
-    "static/js/main.063b0abc.js"
+    "static/js/main.a406c7d1.js"
   ]
 }
