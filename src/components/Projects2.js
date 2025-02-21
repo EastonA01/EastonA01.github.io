@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ioVisual from '../assets/images/visuals/IOProjectVisual2.png'
 import rep4yVisual from '../assets/images/visuals/Rep4yVisual.png'
+import kiloVisual from "../assets/images/visuals/kilovisual.png"
 
 const ProjectsSection = styled.section`
   padding: 50px 20px;
@@ -127,6 +128,13 @@ const Projects2 = () => {
       image: ioVisual,
       demoLink: "",
       repoLink: "https://github.com/EastonA01/CTAC-IO-Project",
+    },
+    {
+      title: "Rich Text Editor",
+      description: "This is a minimal yet powerful text editor built in C, inspired by antirez's kilo, with some modifications. It is a single-file program (~1000 lines of C) with minimal dependencies, featuring essential text-editing capabilities, syntax highlighting, and a search function.",
+      image: kiloVisual,
+      demoLink: "",
+      repoLink: "https://github.com/EastonA01/text-editor-in-c",
     },
     // Add more projects as needed
   ];

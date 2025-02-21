@@ -33,6 +33,7 @@ import wishrVisual from '../assets/images/visuals/Wishr.png'
 import ioVisual1 from '../assets/images/visuals/IOProjectVisual1.png'
 import ioVisual2 from '../assets/images/visuals/IOProjectVisual2.png'
 import inklingVisual from '../assets/images/visuals/inklingVisual.png'
+import kiloVisual from '../assets/images/visuals/kilovisual.png'
 
 
 const FileExplorerContainer = styled.div`
@@ -209,6 +210,16 @@ const ContentWrapper = styled.div`
 
 
 const projects = [
+  {
+    title: "Rich-Text Editor in C",
+    description: "This is a minimal yet powerful text editor built in C, inspired by antirez's kilo, with some modifications. It is a single-file program (~1000 lines of C) with minimal dependencies, featuring essential text-editing capabilities, syntax highlighting, and a search function.",
+    technologies: [cIcon],
+    demoLink: "",
+    repoLink: "https://github.com/EastonA01/text-editor-in-c",
+    images: [
+        kiloVisual
+    ]
+  },
   {
     title: "Capstone Project: ReP4y *",
     description:

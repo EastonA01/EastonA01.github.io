@@ -21,6 +21,9 @@ const FactsContent = styled.div`
     margin-top: 10px;
     color: var(--text-color);
   }
+    a{
+        cursor: help;
+    }
 
   padding: 4em;
 `;
