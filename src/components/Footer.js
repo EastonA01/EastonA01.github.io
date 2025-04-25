@@ -7,7 +7,7 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--text-color);
   padding: 30px 20px;
   position: relative;
   bottom: 0;
@@ -31,7 +31,7 @@ const FooterLinks = styled.div`
 `;
 
 const FooterLink = styled.a`
-  color: var(--white);
+  color: var(--text-color);
   font-size: 1rem;
   text-decoration: none;
   padding: 5px 10px;
@@ -40,7 +40,7 @@ const FooterLink = styled.a`
 
   &:hover {
     background: var(--secondary-color);
-    color: var(--white);
+    color: var(--text-color);
   }
 `;
 
@@ -54,7 +54,7 @@ const FooterSocials = styled.div`
 `;
 
 const CopyrightText = styled.p`
-  color: var(--white);
+  color: var(--text-color);
   font-size: 0.9rem;
   margin-top: 15px;
 `;
@@ -80,7 +80,7 @@ const Footer = () => {
       </FooterSocials>
 
       {/* Copyright Text */}
-      <CopyrightText>&copy; 2024 Easton Anderson. All rights reserved.</CopyrightText>
+      <CopyrightText>&copy; 2025 Easton Anderson. All rights reserved.</CopyrightText>
     </FooterContainer>
   );
 };

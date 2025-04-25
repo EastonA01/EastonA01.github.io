@@ -14,7 +14,7 @@ const LandingSection = styled(motion.section)`
   background-color: #000; /* Fallback background color */
   overflow: hidden;
   text-align: center;
-  color: #fff; /* Text color to contrast with dark background */
+  color: var(--text-color); /* Text color to contrast with dark background */
 `;
 
 export default function Landing() {

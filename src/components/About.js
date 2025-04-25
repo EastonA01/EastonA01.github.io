@@ -33,6 +33,9 @@ const AboutContent = styled.div`
     margin-top: 10px;
     color: var(--text-color);
   }
+    a {
+    color: var(--text-color);
+    }
 `;
 
 export default function About() {

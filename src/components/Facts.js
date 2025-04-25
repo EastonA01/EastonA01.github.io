@@ -23,6 +23,7 @@ const FactsContent = styled.div`
   }
     a{
         cursor: help;
+        color: var(--text-color);
     }
 
   padding: 4em;

@@ -2,9 +2,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { useTheme } from "./ThemeContext";
 
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);
+  const { darkMode } = useTheme();
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -26,7 +28,7 @@ const ParticleBackground = () => {
         options={{
           background: {
             color: {
-              value: "#000000", // Background color
+              value: darkMode ? "#000000" : "#ffffff", // Background color
             },
           },
           fpsLimit: 60,
@@ -54,10 +56,10 @@ const ParticleBackground = () => {
           },
           particles: {
             color: {
-              value: "#ffffff", // Particle color
+              value: darkMode ? "#ffffff" : "#000000", // Particle color
             },
             links: {
-              color: "#ffffff",
+              color: darkMode ? "#ffffff" : "#000000",
               distance: 150,
               enable: true,
               opacity: 0.5,

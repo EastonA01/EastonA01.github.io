@@ -97,7 +97,7 @@ const ProjectTitle = styled.h3`
 
 const ProjectDescription = styled.p`
   font-size: 1rem;
-  color: #ccc;
+  color: var(--text-color);
   margin-bottom: 20px;
 `;
 

@@ -56,7 +56,7 @@ const Folder = styled.div`
   //border: 1px solid var(--gray);
   border-radius: 5px;
   margin-bottom: 5px;
-  background: rgba(15, 15, 15);
+  background: var(--background-color-secondary);
   
 `;
 
@@ -89,6 +89,7 @@ const ProjectDetails = styled.div`
 
   p {
     margin-bottom: 20px;
+    color: var(--text-color)
   }
 
   a {
@@ -111,7 +112,7 @@ const ImageGrid = styled.div`
     width: 100px;
     height: auto;
     border-radius: 5px;
-    border: 1px solid var(--gray);
+    border: 1px solid var(--background-color);
     cursor: pointer;
     transition: transform 0.2s;
 
@@ -127,7 +128,7 @@ const Modal = styled.div`
   left: 0;
   width: 70vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +182,7 @@ const Overlay = styled.div`
 
 const ContentWrapper = styled.div`
   position: relative;
-  background: black;
+  background: var(--background-color);
   padding: 20px;
   border-radius: 10px;
   width: 90%;

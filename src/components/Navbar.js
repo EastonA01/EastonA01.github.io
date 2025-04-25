@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Project from './Projects';
+import { useTheme } from './ThemeContext';
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: var(--white);
+  color: var(--text-color);
   padding: 15px 20px;
   position: fixed;
   width: 100%;
@@ -39,7 +40,7 @@ const NavLinks = styled.div`
 `;
 
 const NavLink = styled.a`
-  color: var(--white);
+  color: var(--text-color);
   font-size: 1rem;
   text-decoration: none;
   padding: 5px 10px;
@@ -48,7 +49,11 @@ const NavLink = styled.a`
 
   &:hover {
     background: var(--secondary-color);
-    color: var(--white);
+    color: var(--text-color);
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
   }
 `;
 
@@ -66,6 +71,7 @@ const Hamburger = styled.div`
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showProject, setShowProject] = useState(false);
+  const { darkMode, toggleTheme } = useTheme();
 
   const onClose = () => {
     setShowProject(false); // Updates state to hide the Project component
@@ -73,14 +79,14 @@ export default function Navbar() {
 
   return (
     <>
-      <Nav>
+      <Nav style={{ padding: '1rem', background: darkMode ? '#111' : '#eee' }}>
         <Hamburger onClick={() => setMenuOpen(!menuOpen)}>☰</Hamburger>
         <NavLinks open={menuOpen}>
           <div>
-          <NavLink href={process.env.PUBLIC_URL+'EastonAndersonSoftwareDeveloperResume.pdf'}>Resume</NavLink>
-          <NavLink onClick={() => setShowProject(true)}>Project History</NavLink>
+            <NavLink href={process.env.PUBLIC_URL+'EastonAndersonSoftwareDeveloperResume.pdf'}>Resume</NavLink>
+            <NavLink onClick={() => setShowProject(true)} style={{cursor: "pointer"}}>Project History</NavLink>
           </div>
-          <div style={{ display: 'flex' }}>
+          <div id="navicons" style={{ display: 'flex' }}>
             <NavLink
               href="https://www.linkedin.com/in/easton-anderson-674aa5259/"
               target="_blank"
@@ -96,6 +102,10 @@ export default function Navbar() {
               style={{ display: 'flex', alignItems: 'center', fontSize: '2em' }}
             >
               <i className="devicon-github-original"></i>
+            </NavLink>
+            <NavLink><button onClick={toggleTheme}>
+                  {darkMode ? '☀' : '🌑'}
+                </button>
             </NavLink>
           </div>
         </NavLinks>

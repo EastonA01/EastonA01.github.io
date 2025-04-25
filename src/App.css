@@ -16,17 +16,36 @@
     url("./fonts/Satoshi-Variable.ttf") format("truetype");
 }
 
-/* Color and font settings for a consistent corporate theme */
+
 :root {
-  --primary-color: #C72727;          /* Deep blue for headings and accents */
-  --secondary-color: #C72727;        /* Light blue for highlights */
-  --background-color: #050505;       /* Light gray for background */
-  --text-color: #FFFFFF;             /* Dark gray for readability */
-  --accent-color: #ffc107;           /* Accent yellow */
+  /* Dark mode (default) */
+  --primary-color: #C72727;
+  --secondary-color: #C72727;
+  --background-color: #050505;
+  --background-color-secondary: #1a1a1a;
+  --text-color: #FFFFFF;
+  --text-color-rgb: 255, 255, 255;
+  --link-color: #ffffff;
+  --accent-color: #ffc107;
   --white: #ffffff;
   --gray: #6c757d;
+
   --font-family: 'Lato', sans-serif;
   --font-heading: 'Roboto', sans-serif;
+}
+
+/* Light mode overrides */
+body.light-mode {
+  --primary-color: #C72727;
+  --secondary-color: #C72727;
+  --background-color: #ffffff;
+  --background-color-secondary: #f5f5f5;
+  --text-color: #000000;
+  --text-color-rgb: 0, 0, 0;
+  --link-color: #ffffff;
+  --accent-color: #c20a0a;
+  --white: #ffffff;
+  --gray: #333333;
 }
 
 /* Global resets and body styling */
@@ -41,7 +60,7 @@
 
 body {
   font-family: var(--font-family);
-  /*background-color: var(--background-color);*/
+  background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -84,7 +103,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: var(--white);
+  color: var(--text-color);
   padding: 15px;
   position: fixed;
   width: 100%;
@@ -95,7 +114,7 @@ nav {
 }
 
 nav a {
-  color: var(--white);
+  color: var(--text-color);
   font-size: 1rem;
   text-decoration: none;
   padding: 5px 10px;
@@ -105,7 +124,16 @@ nav a {
 
 nav a:hover {
   background: var(--secondary-color);
-  color: var(--white);
+  color: var(--text-color);
+}
+
+nav button {
+  background-color: unset;
+}
+
+#navicons {
+  display: flex;
+  align-items: center;
 }
 
 /* Section styling */
@@ -133,7 +161,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--text-color);
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -164,7 +192,7 @@ section {
 /* Button styling */
 button {
   background: var(--primary-color);
-  color: var(--white);
+  color: var(--text-color);
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -175,7 +203,7 @@ button {
 
 button:hover {
   background: var(--primary-color);
-  color: var(--white);
+  color: var(--text-color);
 }
 
 /* Responsive Design */
@@ -237,7 +265,7 @@ button:hover {
 
 .overlay-text p {
   font-size: 1.2rem;
-  color:var(--white)
+  color:var(--text-color)
 }
 
 /* Example SVG animation */
@@ -271,7 +299,7 @@ canvas{
 }
 
 a{
-  color: var(--white);
+  color: var(--link-color);
   font-family: 'Satoshi';
 }
 
@@ -352,7 +380,7 @@ a{
   height: 90px;
   border-radius: 60px;
   font-size: 40px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-color);
   transition: background 0.4s ease-in-out;
 }
 
@@ -360,8 +388,9 @@ a{
 .btn-circle:hover,
 .btn-circle:focus {
   outline: 0;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  background: rgba(var(--text-color-rgb), 0.1);;
+  
 }
 
 html{
